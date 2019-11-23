@@ -20,7 +20,7 @@ public class LiquibaseRecorder {
         if (config.migrateAtStart) {
             Liquibase liquibase = container.instance(Liquibase.class);
             try {
-                liquibase.update(config.context);
+                liquibase.update(config.contexts);
             }
             catch (LiquibaseException e) {
                 throw new RuntimeException(e);

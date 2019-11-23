@@ -18,6 +18,6 @@ public final class LiquibaseRuntimeConfig {
      * Liquibase migration profile.
      */
     @ConfigItem(defaultValue = "production")
-    public String context;
+    public String contexts;
 
 }
