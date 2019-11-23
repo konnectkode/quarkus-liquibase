@@ -17,7 +17,7 @@ jobs:
                       - ~/.m2
                   key: maven
             - store_artifacts:
-                  path: /test-report/target/site/jacoco-aggregate
+                  path: ./test-report/target/site/jacoco-aggregate
                   destination: coverage
             - codecov/upload:
                   file: test-report/target/site/jacoco-aggregate/*
