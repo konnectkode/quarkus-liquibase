@@ -18,7 +18,7 @@ public class LiquibaseMigrateWithContextTest {
     @Inject
     Liquibase liquibase;
 
-    @ConfigProperty(name = "quarkus.liquibase.context")
+    @ConfigProperty(name = "quarkus.liquibase.contexts")
     String context;
 
     @RegisterExtension
