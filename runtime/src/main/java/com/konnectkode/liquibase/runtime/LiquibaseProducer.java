@@ -33,8 +33,8 @@ public class LiquibaseProducer {
             DatabaseConnection databaseConnection = new JdbcConnection(dataSource.getConnection());
             Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(databaseConnection);
 
-            if (liquibaseBuildConfig.defaultSchemaName.isPresent()) {
-                database.setDefaultSchemaName(liquibaseBuildConfig.defaultSchemaName.get());
+            if (liquibaseBuildConfig.defaultSchema.isPresent()) {
+                database.setDefaultSchemaName(liquibaseBuildConfig.defaultSchema.get());
             }
 
             return new Liquibase(liquibaseBuildConfig.changelog, resourceAccessor, database);

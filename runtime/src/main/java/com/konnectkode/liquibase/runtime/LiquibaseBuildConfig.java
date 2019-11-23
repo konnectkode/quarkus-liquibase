@@ -19,6 +19,6 @@ public final class LiquibaseBuildConfig {
      * Liquibase default schema name.
      */
     @ConfigItem
-    public Optional<String> defaultSchemaName;
+    public Optional<String> defaultSchema;
 
 }

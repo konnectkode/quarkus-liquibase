@@ -13,7 +13,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 
 import javax.inject.Inject;
 
-public class LiquibaseMigrateWithContext {
+public class LiquibaseMigrateWithContextTest {
 
     @Inject
     Liquibase liquibase;
@@ -24,7 +24,7 @@ public class LiquibaseMigrateWithContext {
     @RegisterExtension
     static final QuarkusUnitTest config = new QuarkusUnitTest()
             .setArchiveProducer(() -> ShrinkWrap.create(JavaArchive.class)
-                    .addAsResource("context.properties", "application.properties"));
+                    .addAsResource("migrate-with-context.properties", "application.properties"));
 
     @Test
     @DisplayName("Migrates only the correct context")

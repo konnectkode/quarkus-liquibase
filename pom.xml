@@ -10,10 +10,57 @@
     <packaging>pom</packaging>
 
     <name>Quarkus - Liquibase</name>
+    <description>Liquibase extension for Quarkus</description>
+    <url>https://github.com/konnectkode/quarkus-liquibase</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/konnectkode/quarkus-liquibase.git</url>
+        <connection>scm:git:git@github.com:konnectkode/quarkus-liquibase.git</connection>
+        <developerConnection>scm:git:git@github.com:konnectkode/quarkus-liquibase.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/konnectkode/quarkus-liquibase/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>CircleCI</system>
+        <url>https://circleci.com/gh/konnectkode/quarkus-liquibase</url>
+    </ciManagement>
 
     <modules>
         <module>runtime</module>
         <module>deployment</module>
+        <module>test-report</module>
     </modules>
 
     <properties>
@@ -25,6 +72,7 @@
 
         <quarkus.version>1.0.0.CR2</quarkus.version>
         <liquibase.version>3.8.1</liquibase.version>
+        <jacoco.version>0.8.5</jacoco.version>
     </properties>
 
     <dependencyManagement>
@@ -50,9 +98,6 @@
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${compiler-plugin.version}</version>
-                    <configuration>
-
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>io.quarkus</groupId>
@@ -78,6 +123,48 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <plugins>
+            <!-- For some reason maven don't run tests with the surefire plugin version 2.22.0
+                 the default version on maven 3.6 earlier-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.1.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>5.1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>jacoco</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+                        <version>0.8.5</version>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/*$$accessor.class</exclude>
+                            </excludes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
