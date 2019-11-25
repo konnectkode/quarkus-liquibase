@@ -28,7 +28,7 @@ public class LiquibaseDefaultChangelogPathTest {
                     .addAsResource("default-changelog-path.properties", "application.properties"));
 
     @Test
-    @DisplayName("Don't migrates at start")
+    @DisplayName("Migrate with default changelog path")
     public void liquibaseMigrateAtStart() throws Exception {
         liquibase.getDatabaseChangeLog().validate(liquibase.getDatabase());
 
