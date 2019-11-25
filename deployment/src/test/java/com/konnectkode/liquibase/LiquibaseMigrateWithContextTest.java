@@ -29,8 +29,6 @@ public class LiquibaseMigrateWithContextTest {
     @Test
     @DisplayName("Migrates only the correct context")
     public void liquibaseMigrateCorrectContext() throws Exception {
-        Assertions.assertNotNull(liquibase);
-
         liquibase.getDatabaseChangeLog().validate(liquibase.getDatabase(), context);
 
         Assertions.assertThrows(LiquibaseException.class, () ->
