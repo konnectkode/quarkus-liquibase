@@ -2,6 +2,7 @@
 
 [![CircleCI](https://img.shields.io/circleci/build/github/konnectkode/quarkus-liquibase?style=for-the-badge)](https://circleci.com/gh/konnectkode/quarkus-liquibase)
 [![Codecov](https://img.shields.io/codecov/c/github/konnectkode/quarkus-liquibase?style=for-the-badge)](https://codecov.io/gh/konnectkode/quarkus-liquibase)
+[![Maven Central](https://img.shields.io/maven-central/v/com.konnectkode/quarkus-liquibase?style=for-the-badge)](https://search.maven.org/artifact/com.konnectkode/quarkus-liquibase/1.0.0.CR2/jar)
 [![GitHub](https://img.shields.io/github/license/konnectkode/quarkus-liquibase?style=for-the-badge)]((https://www.apache.org/licenses/LICENSE-2.0))
 
 ### Using Quarkus Liquibase
