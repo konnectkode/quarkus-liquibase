@@ -4,7 +4,7 @@
 
     <groupId>com.konnectkode</groupId>
     <artifactId>quarkus-liquibase-parent</artifactId>
-    <version>1.0.0.CR2</version>
+    <version>1.0.1.CR2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Quarkus - Liquibase</name>
@@ -23,7 +23,7 @@
         <url>https://github.com/konnectkode/quarkus-liquibase.git</url>
         <connection>scm:git:git@github.com:konnectkode/quarkus-liquibase.git</connection>
         <developerConnection>scm:git:git@github.com:konnectkode/quarkus-liquibase.git</developerConnection>
-        <tag>quarkus-liquibase-parent-1.0.0.CR2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
