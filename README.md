@@ -50,7 +50,7 @@ Liquibase support relies on the Quarkus default datasource config, you must add 
 > **default:** \<none>
 
 **quarkus.liquibase.contexts**
-> Liquibase supports contexts a comma-separated list of contexts that works like profiles ([Liquibase Contexts](https://www.liquibase.org/documentation/contexts.html)).
+> Liquibase supports contexts a comma-separated list of contexts that works like profiles ([Liquibase Contexts](https://www.liquibase.org/documentation/contexts.html)).  
 > **Default:** \<none>
 
 The following is an example for the *application.properties* file:
@@ -62,7 +62,7 @@ quarkus.datasource.username=liquibase
 quarkus.datasource.password=liquibase
 
 # Liquibase minimal config properties
-#quarkus.liquibase.changelog=db/changelog
+#quarkus.liquibase.changelog=db/changelog.xml
 #quarkus.liquibase.default-schema=production
 #quarkus.liquibase.contexts=production,migration
 ```

@@ -12,7 +12,7 @@ public final class LiquibaseBuildConfig {
     /**
      * Liquibase root changelog.
      */
-    @ConfigItem(defaultValue = "db/migration")
+    @ConfigItem(defaultValue = "db/migration/changelog.xml")
     public String changelog;
 
     /**

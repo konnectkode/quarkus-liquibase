@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="uuid.type" value="UUID"/>
+    <property name="long.type" value="BIGINT"/>
+    <property name="string.type" value="VARCHAR(250)"/>
+    <property name="date.type" value="DATE"/>
+    <property name="timestamp.type" value="TIMESTAMP"/>
+    <property name="time.type" value="TIME"/>
+    <property name="integer.type" value="INT"/>
+    <property name="small.type" value="TINYINT"/>
+    <property name="bigDecimal.type" value="NUMBER(20,6)"/>
+    <property name="double.type" value="DOUBLE"/>
+    <property name="boolean.type" value="BOOLEAN"/>
+    <property name="blob.type" value="BLOB" dbms="h2,postgresql"/>
+    <property name="blob.type" value="longblob" dbms="mysql"/>
+    <property name="clob.type" value="CLOB"/>
+
+    <property name="uuid.load.type" value="STRING"/>
+    <property name="long.load.type" value="NUMERIC"/>
+    <property name="string.load.type" value="STRING"/>
+    <property name="timeOfOccurence.load.type" value="DATE"/>
+    <property name="timestamp.load.type" value="NUMERIC"/>
+    <property name="integer.load.type" value="NUMERIC"/>
+    <property name="bigDecimal.load.type" value="NUMERIC"/>
+    <property name="boolean.load.type" value="BOOLEAN"/>
+
+    <changeSet id="change-set" author="quarkus">
+        <createTable tableName="DUMMY_DEFAULT_PATH">
+            <column name="ID" type="${uuid.type}"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
