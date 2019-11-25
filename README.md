@@ -6,6 +6,8 @@
 
 ### Using Quarkus Liquibase
 
+OBS: THIS LIBRARY DOES NOT SUPPORT NATIVE IMAGE
+
 #### Setting up support for Liquibase
 
 To start using Liquibase with your project, you just need to: 
