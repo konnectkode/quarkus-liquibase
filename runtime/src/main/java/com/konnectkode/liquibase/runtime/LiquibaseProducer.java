@@ -37,6 +37,10 @@ public class LiquibaseProducer {
                 database.setDefaultSchemaName(liquibaseBuildConfig.defaultSchema.get());
             }
 
+            liquibaseBuildConfig.databaseChangeLogLockTable.ifPresent(database::setDatabaseChangeLogLockTableName);
+
+            liquibaseBuildConfig.databaseChangeLogTable.ifPresent(database::setDatabaseChangeLogTableName);
+
             return new Liquibase(liquibaseBuildConfig.changelog, resourceAccessor, database);
         } catch (SQLException | DatabaseException e) {
             throw new RuntimeException(e);
