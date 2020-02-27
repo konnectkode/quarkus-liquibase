@@ -21,4 +21,16 @@ public final class LiquibaseBuildConfig {
     @ConfigItem
     public Optional<String> defaultSchema;
 
+    /**
+     * Liquibase changelog table name.
+     */
+    @ConfigItem
+    public Optional<String> databaseChangeLogTable;
+
+    /**
+     * Liquibase changelog lock table name.
+     */
+    @ConfigItem
+    public Optional<String> databaseChangeLogLockTable;
+
 }
