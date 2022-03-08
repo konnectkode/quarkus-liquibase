@@ -83,7 +83,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <quarkus.version>1.0.0.CR2</quarkus.version>
-        <liquibase.version>3.8.1</liquibase.version>
+        <liquibase.version>4.8.0</liquibase.version>
         <jacoco.version>0.8.5</jacoco.version>
     </properties>
 
